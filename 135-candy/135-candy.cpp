@@ -18,9 +18,7 @@ public:
          }  
         }
         
-        for(auto i:forward)
-            cout<<i<<" ";
-        cout<<endl;
+        
         backward[rat.size()-1]=1;
         for(int i=rat.size()-2;i>=0;i--){
             if(rat[i]>rat[i+1]){
@@ -29,14 +27,10 @@ public:
              backward[i]=1;
          } 
         }
-        
-        for(auto i:backward)
-            cout<<i<<" ";
-        cout<<endl;
         long result=0;
         
         for(int i=0;i<rat.size();i++){
-            cout<<max(forward[i],backward[i])<<" ";
+           
             result+=max(forward[i],backward[i]);
         }
         return result;
